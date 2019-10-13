@@ -1,3 +1,6 @@
+# blockchain ignores
+**/wallet/
+
 # Logs
 logs
 *.log

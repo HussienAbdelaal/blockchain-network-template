@@ -1,0 +1,14 @@
+{
+  "name": "blockchain-network-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fabric-ca-client": "~1.4.0",
+    "fabric-network": "~1.4.0"
+  }
+}
