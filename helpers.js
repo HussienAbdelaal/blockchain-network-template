@@ -46,7 +46,7 @@ const helper = {
     let networkPath = path.join(__dirname, './networks/networkTemplate');
     helper.executeCmd(`
     cd ${networkPath} &&
-    echo y | ./byfn.sh up -n -a`, () => {
+    echo y | ./byfn.sh up -n -a -s couchdb`, () => {
       helper.enrollAdmin('admin', 'adminpw', () => {
         helper.registerUser('admin', 'user0', () => {
           return resolve(`network started successfully and created admin and user wallets`);
