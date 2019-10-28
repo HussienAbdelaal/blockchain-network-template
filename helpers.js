@@ -76,6 +76,14 @@ const helper = {
       return reject('run contract error: ', error.msg);
     });
   },
+  upgradeContract: (ccVersion, resolve, reject) => {
+    let networkPath = path.join(__dirname, './networks/networkTemplate');
+    helper.executeCmd(`cd ${networkPath} && ./upgradeCC.sh ${ccName} ${ccVersion} && docker ps`, () => {
+      return resolve('upgrade contract successful');
+    }, (error) => {
+      return reject('upgrade contract error: ', error.msg);
+    });
+  },
   createAsset: async (assetObject, values) =>
     await helper.transactionExcute(['submit', 'createAsset', JSON.stringify(assetObject), JSON.stringify(values)]),
   queryAllAsset: async asset =>

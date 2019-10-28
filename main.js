@@ -2,16 +2,28 @@ const Helpers = require('./helpers.js');
 
 console.log('uncomment each part separately to test it, then integrate it with your server');
 
-//  // start network
-// Helpers.startNetwork(() => {
-//     console.log('started network!');
+// // teardown network
+// Helpers.teardownNetwork(() => {
+//     // start network
+//     Helpers.startNetwork(() => {
+//         // deploy contract
+//         Helpers.deployContract(() => {
+//             console.log('done');
+//             return;
+//         }, (err) => {
+//             console.log(err);
+//         });
+//         return;
+//     }, (err) => {
+//         console.log('err starting network', err);
+//     });
 //     return;
 // }, (err) => {
-//     console.log('err starting network', err);
+//     console.log('err stoping network', err);
 // });
 
-//  // deploy contract
-// Helpers.deployContract(() => {
+// // upgrade contract
+// Helpers.upgradeContract('2.0', () => {
 //     console.log('done');
 //     return;
 // }, (err) => {
@@ -23,10 +35,6 @@ console.log('uncomment each part separately to test it, then integrate it with y
 // .then(cars => console.log(cars))
 // .catch(err =>  console.log(err))
 
-//  // teardown network
-// Helpers.teardownNetwork(() => {
-//     console.log('stopped network!');
-//     return;
-// }, (err) => {
-//     console.log('err stoping network', err);
-// });
+// Helpers.transactionExcute(['submit', 'changeCarColor', JSON.stringify({carNumber: 'CAR1562965005', newColor: 'new color'})])
+// .then(cars => console.log(cars))
+// .catch(err =>  console.log(err))
